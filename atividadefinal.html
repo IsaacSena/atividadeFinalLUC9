@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Atividade Final</title>
+</head>
+
+<body>
+
+    <h1>Loja de carros</h1>
+    <button onclick="additens()">Adicionar</button>
+    <button onclick="deletar()">Deleta venda</button>
+    <p id="modelo"></p>
+    <p id="mensagem1"></p>
+    <p id="motor"></p>
+    <p id="potencia"></p>
+    <p id="transmissao"></p>
+    <p id="mensagem2"></p>
+    <p id="velocidade"></p>
+    <p id="aceleracao"></p>
+    <p id="mensagem3"></p>
+    <p id="consumocidade"></p>
+    <p id="consumoestrada"></p>
+    <p id="valor"></p>
+    <button onclick="formadepagamento()">Forma de pagamento</button>
+    <p id="tudo"></p>
+    <button onclick="confimar()">Confirmar compra</button>
+    <p id="tudo2"></p>
+    <h2>Avaliações</h2>
+    <p id="avaliacao"></p>
+    <button onclick="ava()">Deixe sua avaliação</button>
+    
+    
+
+
+    <script>
+
+        const avaliacoes = []
+        const informacoes = []
+        let modelo = ""
+        let mensagem1
+        let modelo2 = ""
+        let modelo3 = ""
+        let modelo4 = ""
+        let motor
+        let transmissao
+        let mensagem2
+        let velocidade
+        let aceleracao
+        let mensagem3
+        let consumocidade
+        let consumoestrada
+        let valor
+        let valortotal = 0
+        let resultado
+
+
+
+
+
+
+        let cliente = prompt("Digite o nome do cliente")
+        informacoes.push(cliente)
+        alert("Seja Bem-Vindo Sr(a) " + cliente + ". Pode me chamar de Chefe do Beneficio. Gostaria de comprar um carro no plecinho? Se sim clique em OK")
+
+        function additens() {
+            let carro = prompt("Qual carro deseja comprar? 1 - Mitsubishi Eclipse do Bryan , 2 - Porsche 911, 3 - McLaren Senna, 4 - Rolls-Royce Phamton")
+            switch (carro) {
+                case "1":
+                    modelo1 = "Mitsubishi Eclipse GS-T 1995"
+                    modelo += "<h2>Mitsubishi Eclipse GS-T 1995</h2>"
+                    modelo += "<h3>Motor</h3>"
+                    modelo += "2.0L I4<br>"
+                    modelo += "195 de potência<br>"
+                    modelo += "Manual de 5 velocidades ou Automático de 4 velocidades<br>"
+                    modelo += "<h3>Desempenho</h3>"
+                    modelo += "Velocidade Máxima de 209 Km/s<br>"
+                    modelo += "De 0-100 km/h em 8 segundos<br>"
+                    modelo += "<h3>Consumo de Combustível</h3>"
+                    modelo += "Cidade: Aproximadamente 10 Km/L<br>"
+                    modelo += "Estrada: Aproximadamente 13 Km/L<br>"
+                    modelo += "<h3>R$ 60.000</h3><br>"
+                    valortotal += 60000
+                    informacoes.push(modelo1)
+                    break;
+                case "2":
+                    modelo1 = "Porsche 911"
+                    modelo2 += "<h2>Porsche 911</h2>"
+                    modelo2 += "<h2>Motor</h2>"
+                    modelo2 += "3.0L Twin-Turbo Flat-6<br>"
+                    modelo2 += "650 cv de potência<br>"
+                    modelo2 += "Automática de 8 velocidades PDK (Porsche Doppelkupplung) ou Manual de 7 velocidades (opcional)<br>"
+                    modelo2 += "<h3>Desempenho</h3>"
+                    modelo2 += "Velocidade Máxima de 293 Km/s<br>"
+                    modelo2 += "De 0-100 km/h em 4 segundos<br>"
+                    modelo2 += "<h3>Consumo de Combustível</h3>"
+                    modelo2 += "Cidade: Aproximadamente 8-10 Km/L<br>"
+                    modelo2 += "Estrada: Aproximadamente 12-14 Km/L<br>"
+                    modelo2 += " <h3>R$ 575.800</h3><br>"
+                    valortotal += 575000
+                    informacoes.push(modelo1)
+                    break;
+                case "3":
+                    modelo1 = "McLaren Senna"
+                    modelo3 += "<h2>McLaren Senna</h2>"
+                    modelo3 += "<h3>Motor</h3>"
+                    modelo3 += "4.0L V8 Twin-Turbo<br>"
+                    modelo3 += "800 cv de potência<br>"
+                    modelo3 += "Automática de 7 velocidades de dupla embreagem (SSG)<br>"
+                    modelo3 += "<h3>Desempenho</h3>"
+                    modelo3 += "Velocidade Máxima de 340 Km/s<br>"
+                    modelo3 += "De 0-100 km/h em 2,8 segundos<br>"
+                    modelo3 += "<h3>Consumo de Combustível</h3>"
+                    modelo3 += "Cidade: Aproximadamente 4-5 Km/L<br>"
+                    modelo3 += "Estrada: Aproximadamente 7-8 Km/L<br>"
+                    modelo3 += " <h3>R$ 7.100.000,00</h3><br>"
+                    valortotal += 7100000
+                    informacoes.push(modelo1)
+                    break;
+                case "4":
+                    modelo1 = "Rolls-Royce Phamton"
+                    modelo4 += "<h2>Rolls-Royce Phamton</h2>"
+                    modelo4 += "<h3>Motor</h3>"
+                    modelo4 += "V12 de 6.75 litros com dupla turbo</br>"
+                    modelo4 += "563 cv de potência<br>"
+                    modelo4 += "Transmissão automática de 8 velocidades<br>"
+                    modelo4 += "<h3>Desempenho</h3>"
+                    modelo4 += "Velocidade Máxima de 250 Km/s<br>"
+                    modelo4 += "De 0-100 km/h em 5,3 segundos<br>"
+                    modelo4 += "<h3>Consumo de Combustível</h3>"
+                    modelo4 += "Cidade: Aproximadamente 5,1 Km/L<br>"
+                    modelo4 += "Estrada: Aproximadamente 8,5 Km/L<br>"
+                    modelo4 += " <h3>R$ 5.100.000,00</h3><br>"
+                    valortotal += 5100000
+                    informacoes.push(modelo1)
+                    break;
+                default:
+                if (carro != "1" && "2" && "3" && "4") {
+                    alert("Codigo inexistente, escolha um carro entre 1 e 4")
+                } 
+                    preco = 0;
+                    break;
+            }
+
+
+            document.getElementById("modelo").innerHTML = modelo;
+            document.getElementById("mensagem1").innerHTML = modelo2;
+            document.getElementById("motor").innerHTML = modelo3;
+            document.getElementById("potencia").innerHTML = modelo4;
+            
+
+
+        }
+
+
+
+        function deletar() {
+            document.getElementById("modelo").innerHTML = "";
+            document.getElementById("mensagem1").innerHTML = "";
+            document.getElementById("motor").innerHTML = "";
+            document.getElementById("potencia").innerHTML = "";
+            document.getElementById("transmissao").innerHTML = "";
+            document.getElementById("mensagem2").innerHTML = "";
+            document.getElementById("velocidade").innerHTML = "";
+            document.getElementById("aceleracao").innerHTML = "";
+            document.getElementById("mensagem3").innerHTML = "";
+            document.getElementById("consumocidade").innerHTML = "";
+            document.getElementById("consumoestrada").innerHTML = "";
+            document.getElementById("valor").innerHTML = "";
+            document.getElementById("tudo").innerHTML = ""
+
+            informacoes.pop()
+            document.getElementById("vendas").innerHTML = informacoes
+            valortotal = 0
+
+
+        }
+
+        function formadepagamento() {
+            let pagamento = prompt("Digite 1 - Para pagamento á VISTA com desconto de 10% ou 2 - Para pagar em PARECELADO em 12X")
+            if (pagamento == "1") {
+                resultado = "R$" + (valortotal - (10 * valortotal) / 100)
+                document.getElementById("tudo").innerHTML = resultado
+            } else if (pagamento == "2") {
+                resultado = "12 vezes de " + (valortotal / 12)
+                document.getElementById("tudo").innerHTML = resultado
+            } else {
+                "Opção inválida"
+            }
+        }
+
+        function confimar() {
+
+           
+            document.getElementById("tudo2").innerHTML =  informacoes
+            alert("Compra confirmada, Obrigado e volte sempre")
+        }
+
+        function ava() {
+            for (let i = 0; i < 1; i++) {
+                let avaliacao = prompt("Digite sua avaliação")
+                avaliacoes.push(avaliacao)
+                document.getElementById("avaliacao").innerHTML = avaliacoes
+
+            }
+        }
+
+       
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
